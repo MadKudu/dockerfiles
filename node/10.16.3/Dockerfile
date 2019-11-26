@@ -1,5 +1,5 @@
 # See list https://github.com/CircleCI-Public/circleci-dockerfiles/blob/master/node/images/
-FROM circleci/node:10.14.1-jessie-browsers
+FROM circleci/node:10.16.3
 MAINTAINER MadKudu (www.madkudu.com)
 
 RUN sudo apt-get install python-pip python python-dev build-essential
