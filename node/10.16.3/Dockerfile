@@ -2,9 +2,13 @@
 FROM circleci/node:10.16.3
 MAINTAINER MadKudu (www.madkudu.com)
 
-RUN sudo apt-get install python-pip python python-dev build-essential
-RUN sudo pip install --upgrade pip
-RUN sudo pip install --upgrade virtualenv
-RUN pip install awscli --upgrade --user
-RUN pip install awsebcli --upgrade --user
+# Install python + pip
+RUN sudo apt-get update
+RUN sudo apt-get install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev python3-pip python3 python-dev 
+RUN sudo pip3 install --upgrade pip3
+RUN sudo pip3 install --upgrade virtualenv
+# Install the EB CLI
+RUN pip3 install awsebcli --upgrade --user
 RUN export PATH=~/.local/bin:$PATH
+# Install rsync
+RUN sudo apt-get install rsync
